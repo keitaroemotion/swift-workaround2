@@ -12,14 +12,14 @@ import CoreLocation
 class ViewController: UIViewController, CLLocationManagerDelegate {
     // let button = UIButton()
 
-    var lm: CLLocationManager! = nil
+    var locationManager:    CLLocationManager! = nil
     var longitude:          CLLocationDegrees!
     var latitude:           CLLocationDegrees!
     @IBOutlet var lonLabel: UILabel!
     @IBOutlet var latLabel: UILabel!
 
     @IBAction func nowButton(sender: AnyObject) {
-        lm.startUpdatingLocation()
+        locationManager.startUpdatingLocation()
     }
 
     //func findLocation() {
@@ -32,6 +32,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        longitude     = 0.0
+        latitude      = 0.0
+        lonLabel.text = String(longitude)
+        latLabel.text = String(latitude)
+
+        locationManager                 = CLLocationManager()
+        locationManager.delegate        = self
+        locationManager.requestAlwaysAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.distanceFilter  = 300
     }
 }
