@@ -44,4 +44,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter  = 300
     }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+
+    func locationManager(
+        manager:                         CLLocationManager!,
+        didUpdateToLocation newLocation: CLLocation!,
+        fromLocation        oldLocation: CLLocation!
+    ){
+        longitude          = newLocation.coordinate.longitude
+        latitude           = newLocation.coordinate.latitude
+        self.lonLabel.text = String(longitude)
+        self.latLabel.text = String(latitude)
+    }
 }
