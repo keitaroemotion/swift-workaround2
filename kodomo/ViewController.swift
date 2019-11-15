@@ -10,7 +10,6 @@ import UIKit
 import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
-    // let button = UIButton()
 
     var locationManager:    CLLocationManager! = nil
     var longitude:          CLLocationDegrees!
@@ -21,14 +20,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func nowButton(sender: AnyObject) {
         locationManager.startUpdatingLocation()
     }
-
-    //func findLocation() {
-    //    let locationManager                                = CLLocationManager()
-    //    locationManager.desiredAccuracy                    = kCLLocationAccuracyHundredMeters;
-    //    locationManager.distanceFilter                     = 10;
-    //    //locationManager.pausesLocationUpdatesAutomatically = NO;
-    //    //locationManager.allowsBackgroundLocationUpdates    = YES;
-    //}
 
     override func viewDidLoad() {
         super.viewDidLoad()
