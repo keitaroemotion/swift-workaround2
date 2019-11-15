@@ -18,6 +18,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var lonLabel: UILabel!
     @IBOutlet var latLabel: UILabel!
 
+    @IBAction func nowButton(sender: AnyObject) {
+        lm.startUpdatingLocation()
+    }
+
     //func findLocation() {
     //    let locationManager                                = CLLocationManager()
     //    locationManager.desiredAccuracy                    = kCLLocationAccuracyHundredMeters;
