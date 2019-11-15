@@ -11,7 +11,14 @@ import CoreLocation
 
 class ViewController: UIViewController {
     // let button = UIButton()
-    let locationManager = CLLocationManager()
+
+    func findLocation() {
+        let locationManager                                = CLLocationManager()
+        locationManager.desiredAccuracy                    = kCLLocationAccuracyHundredMeters;
+        locationManager.distanceFilter                     = 10;
+        //locationManager.pausesLocationUpdatesAutomatically = NO;
+        //locationManager.allowsBackgroundLocationUpdates    = YES;
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
