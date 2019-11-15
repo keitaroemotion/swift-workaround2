@@ -26,8 +26,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
         longitude     = 0.0
         latitude      = 0.0
-        lonLabel.text = String(longitude)
-        latLabel.text = String(latitude)
+
+        self.lonLabel?.text = String(longitude)
+        self.latLabel?.text = String(latitude)
 
         locationManager                 = CLLocationManager()
         locationManager.delegate        = self
@@ -47,7 +48,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     ){
         longitude          = newLocation.coordinate.longitude
         latitude           = newLocation.coordinate.latitude
-        self.lonLabel.text = String(longitude)
-        self.latLabel.text = String(latitude)
+        self.lonLabel?.text = String(longitude)
+        self.latLabel?.text = String(latitude)
+    }
+
+    func locationManager(
+         manager:                CLLocationManager!,
+         didFailWithError error: NSError!
+    ){
+        NSLog("Error")
     }
 }
