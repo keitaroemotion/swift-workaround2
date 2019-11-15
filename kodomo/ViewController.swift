@@ -9,19 +9,24 @@
 import UIKit
 import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
     // let button = UIButton()
 
-    func findLocation() {
-        let locationManager                                = CLLocationManager()
-        locationManager.desiredAccuracy                    = kCLLocationAccuracyHundredMeters;
-        locationManager.distanceFilter                     = 10;
-        //locationManager.pausesLocationUpdatesAutomatically = NO;
-        //locationManager.allowsBackgroundLocationUpdates    = YES;
-    }
+    var lm: CLLocationManager! = nil
+    var longitude:          CLLocationDegrees!
+    var latitude:           CLLocationDegrees!
+    @IBOutlet var lonLabel: UILabel!
+    @IBOutlet var latLabel: UILabel!
+
+    //func findLocation() {
+    //    let locationManager                                = CLLocationManager()
+    //    locationManager.desiredAccuracy                    = kCLLocationAccuracyHundredMeters;
+    //    locationManager.distanceFilter                     = 10;
+    //    //locationManager.pausesLocationUpdatesAutomatically = NO;
+    //    //locationManager.allowsBackgroundLocationUpdates    = YES;
+    //}
 
     override func viewDidLoad() {
-        findLocation     ()
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
